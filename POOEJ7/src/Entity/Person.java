@@ -3,10 +3,10 @@ package Entity;
 public class Person {
     private String name;
     private int age;
-    private String sex;
+    private char sex;
     private double weight;
     private double height;
-    public Person(String name, int age, String sex, double weight, double height) {
+    public Person(String name, int age, char sex, double weight, double height) {
         this.name = name;
         this.age = age;
         this.sex = sex;
@@ -27,12 +27,7 @@ public class Person {
     public void setAge(int age) {
         this.age = age;
     }
-    public String getSex() {
-        return sex;
-    }
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
+    
     public double getWeight() {
         return weight;
     }
@@ -44,5 +39,11 @@ public class Person {
     }
     public void setHeight(double height) {
         this.height = height;
+    }
+    public char getSex() {
+        return sex;
+    }
+    public void setSex(char sex) {
+        this.sex = sex;
     }
 }
