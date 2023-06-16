@@ -18,7 +18,6 @@ public class CadenaService {
     }
     public static boolean esVocal(char letra) {
         String vocales = "aeiouAEIOU";
-        
         return vocales.contains(Character.toString(letra));
     }
 
