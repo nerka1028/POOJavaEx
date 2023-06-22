@@ -10,6 +10,6 @@ public class POOEJ11 {
         int day = 11;
         Date date = new Date(year, month, day);
         System.out.println("Year: " + date.getYear());
-        System.out.println("Now date: "+date.getDate());
+        System.out.println("Now date: "+ date.getTime());
     }
 }

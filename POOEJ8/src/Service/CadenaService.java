@@ -9,16 +9,13 @@ public class CadenaService {
     Cadena cadena = new Cadena();
 
     public void mostrarVocales(Cadena cadena) {
+        String vocales = "aeiouAEIOU";
         char[] charArray = cadena.getFrase().toCharArray();
         int contadorVocales = 0;
         for (char c : charArray) {
-            if(esVocal(c)) contadorVocales++;
+            if(vocales.contains(Character.toString(c))) contadorVocales++;
         }
         System.out.println("La frase: \"" + cadena.getFrase() + "\" tiene " + contadorVocales + " vocales.");
-    }
-    public static boolean esVocal(char letra) {
-        String vocales = "aeiouAEIOU";
-        return vocales.contains(Character.toString(letra));
     }
 
     public void invertirFrase(Cadena cadena) {
