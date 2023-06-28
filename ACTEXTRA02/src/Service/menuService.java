@@ -27,6 +27,7 @@ public class menuService {
     public void llamarMetodos(int opcion) {
         Pelicula[] listPeliculas;
         Alquiler[] listaAlquiler;
+        Alquiler alquiler;
         switch (opcion) {
             case 1:
                 listPeliculas =  peliculaService.cargarPeliculas();
@@ -50,7 +51,7 @@ public class menuService {
                 alquilerService.buscarAlquiler(listaAlquiler);
                 break;
             case 8: 
-                alquilerService.calcularIngreso(Alquiler alquiler);
+                alquilerService.calcularIngreso(alquiler);
                 break;
             case 9: 
                 System.out.println("Gracias por participar.");
