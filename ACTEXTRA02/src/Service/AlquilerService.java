@@ -24,9 +24,7 @@ public class AlquilerService {
         System.out.println("Día: ");
         int diaF = leer.nextInt();
         Date fechaFin = new Date(yearF, mesF, diaF);
-        System.out.println("Precio: ");
-        double precio = leer.nextDouble();
-        return new Alquiler(peliculaAlquilada, fechaInicio, fechaFin, precio);
+        return new Alquiler(peliculaAlquilada, fechaInicio, fechaFin);
     }
     public Alquiler[] cargarAlquiler() {
         System.out.println("Cantidad de alquileres: ");
@@ -37,6 +35,40 @@ public class AlquilerService {
         }
         return listaAlquiler;
     }
-    
-
+    public void listaAlquiler(Alquiler[] listaAlquiler) {
+        for (int i = 0; i < listaAlquiler.length; i++) {
+            System.out.println("Película " + i + ":" + listaAlquiler[i].getPeliculaAlquilada());
+        }
+    }
+    public void buscarAlquiler(Alquiler[] listaAlquiler) {
+        System.out.println("Fecha del alquiler a buscar: ");
+        System.out.println("Año: ");
+        int yearF = leer.nextInt();
+        System.out.println("Mes: ");
+        int mesF = leer.nextInt();
+        System.out.println("Día: ");
+        int diaF = leer.nextInt();
+        Date fecha = new Date(yearF, mesF, diaF);
+        boolean encontrado = false;
+        for (int i = 0; i < listaAlquiler.length; i++) {
+            if(listaAlquiler[i].getFechaInicio() == fecha){
+                encontrado = true;
+                break;
+            }
+        }
+        if(encontrado){
+            System.out.println("El alquiler existe.");
+        } else System.out.println("El alquiler no existe.");
+    }
+    public void calcularIngreso(Alquiler alquiler) {
+        long milisecondsByDay = 86400000;
+        long dias = (alquiler.getFechaInicio().getTime()-alquiler.getFechaFin().getTime())/milisecondsByDay;
+        double precio= 10;
+        if(dias>3){
+            for (int i = 0; i < dias-3; i++) {
+                precio = precio + precio*0.1;
+            }
+        }
+        alquiler.setPrecio(precio);
+    }
 }

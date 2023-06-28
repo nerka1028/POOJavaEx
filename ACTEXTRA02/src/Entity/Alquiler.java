@@ -7,6 +7,11 @@ public class Alquiler {
     private Date fechaInicio;
     private Date fechaFin;
     private double precio;
+    public Alquiler(String peliculaAlquilada, Date fechaInicio, Date fechaFin) {
+        this.peliculaAlquilada = peliculaAlquilada;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+    }
     public Alquiler(String peliculaAlquilada, Date fechaInicio, Date fechaFin, double precio) {
         this.peliculaAlquilada = peliculaAlquilada;
         this.fechaInicio = fechaInicio;
